@@ -12,11 +12,11 @@
         }
 
     }
-    internal class AreaAndPerimeter2
+    internal class DisplayingMessage
     {
         public static void DisplayMsg()
         {
-            Console.WriteLine("internal class proj 2")
+            Console.WriteLine("internal class proj 2");
         }
        
 

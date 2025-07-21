@@ -1,5 +1,5 @@
-﻿using ProjectTwo;
-using MyFirstApp;
+﻿using MyFirstApp;
+
 internal class Program
 {
     private static void Main(string[] args)
@@ -20,17 +20,22 @@ internal class Program
         //}   
 
         //Program 2
-        Console.WriteLine("Enter length");
-        string tempLength = Console.ReadLine();
-        Console.WriteLine("Enter breadth");
-        string tempWidth = Console.ReadLine();
-        bool isLength = float.TryParse(tempLength, out float length);
-        bool isWidth = float.TryParse(tempWidth, out float width);
-        if (isLength&&isWidth) { 
-       float area= AreaAndPerimeter.CalArea(length, width);
-        Console.WriteLine($"Area is {area}");
-       float perimeter = AreaAndPerimeter.CalPerimeter(length, width);
-        Console.WriteLine($"Perimeter is {perimeter}");
-        }
+        // Console.WriteLine("Enter length");
+        // string tempLength = Console.ReadLine();
+        // Console.WriteLine("Enter breadth");
+        // string tempWidth = Console.ReadLine();
+        // bool isLength = float.TryParse(tempLength, out float length);
+        // bool isWidth = float.TryParse(tempWidth, out float width);
+        // if (isLength&&isWidth) { 
+        //float area= AreaAndPerimeter.CalArea(length, width);
+        // Console.WriteLine($"Area is {area}");
+        //float perimeter = AreaAndPerimeter.CalPerimeter(length, width);
+        // Console.WriteLine($"Perimeter is {perimeter}");
+        //DisplayingMessage.DisplayMsg(); error internal method
+        //Program 3
+         Calculations calc = new Calculations();
+        calc.Calculation(200, 300, 400);
     }
+    
+    
 }

@@ -1,0 +1,150 @@
+﻿## ✅ C# Learning Notes (Lecture 1 to Now)
+
+---
+
+### 📘 **Lecture 1: Introduction to C# and .NET**
+
+* **C#** is an object-oriented programming language developed by Microsoft.
+* It runs on the **.NET platform**, which provides runtime (CLR) and libraries (BCL/FCL).
+* **.NET Core / .NET 5+** is cross-platform and modern version of .NET.
+* A basic C# program is a **Console Application** with a `Main` method as the entry point.
+
+**Example:**
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, World!");
+    }
+}
+```
+
+---
+
+### 📗 **Lecture 2: Input, Output, and Data Types**
+
+#### 👉 **User Input / Output**
+
+* Use `Console.WriteLine()` to output to console.
+* Use `Console.ReadLine()` to read from console.
+* Use `TryParse()` to convert and validate data types from string inputs.
+
+#### 👉 **Primitive Data Types**
+
+| Data Type | Bytes | Range                           | Example                 |
+| --------- | ----- | ------------------------------- | ----------------------- |
+| `byte`    | 1     | 0 to 255                        | `byte b = 10;`          |
+| `sbyte`   | 1     | -128 to 127                     |                         |
+| `short`   | 2     | -32,768 to 32,767               |                         |
+| `ushort`  | 2     | 0 to 65,535                     |                         |
+| `int`     | 4     | -2,147,483,648 to 2,147,483,647 | `int age = 25;`         |
+| `uint`    | 4     | 0 to 4,294,967,295              |                         |
+| `long`    | 8     | Huge Range                      |                         |
+| `float`   | 4     | \~6-9 digits precision          | `float pi = 3.14f;`     |
+| `double`  | 8     | \~15-17 digits precision        | `double d = 3.14159;`   |
+| `decimal` | 16    | \~28-29 digits precision        | For financial data      |
+| `char`    | 2     | Unicode character               | `char ch = 'A';`        |
+| `bool`    | 1 bit | true or false                   | `bool isTrue = true;`   |
+| `string`  | N/A   | Sequence of chars               | `string name = "John";` |
+
+---
+
+### 📘 **Lecture 3: `out`, `ref`, `in` Parameters & Method Definitions**
+
+* `out`: Used to return a value from a method.
+
+  * Value must be assigned inside the method.
+* `ref`: Passes a reference, so the method can modify the original value.
+* `in`: Like `ref`, but **read-only**. Value cannot be changed inside the method.
+
+```csharp
+void GetSum(int a, int b, out int sum)
+{
+    sum = a + b;
+}
+
+void ReadOnlyExample(in int num)
+{
+    Console.WriteLine(num); // can't modify num
+}
+```
+
+---
+
+### 📗 **Lecture 4: Namespaces, Classes, and Access Modifiers**
+
+#### ✔️ **Namespaces**
+
+* A way to organize and group related classes.
+
+```csharp
+namespace MyFirstApp
+{
+    class MyClass { }
+}
+```
+
+#### ✔️ **Classes and Methods**
+
+* `class` is a blueprint for objects.
+* Methods can be `static` (called without object) or instance methods.
+
+#### ✔️ **Access Modifiers**
+
+| Modifier    | Accessible Within | Across Projects | Example                              |
+| ----------- | ----------------- | --------------- | ------------------------------------ |
+| `private`   | Same class        | ❌               | Default for class members            |
+| `internal`  | Same project      | ❌               | Default for classes                  |
+| `public`    | Everywhere        | ✅               | Needed to access from other projects |
+| `protected` | Derived classes   | ❌               |                                      |
+
+---
+
+### 🛠️ **Lecture 5: Creating Multiple Projects and Using Classes Across Projects**
+
+* You can create a **solution** with multiple projects.
+* To **use a class from another project**, you must:
+
+  * Make the class `public`.
+  * Add a **project reference** (Right-click → Add → Project Reference).
+  * Use the proper `using` statement.
+
+```csharp
+// In ProjectTwo
+namespace ProjectTwo
+{
+    public class AreaAndPerimeter
+    {
+        public static float CalArea(in float l, in float w) => l * w;
+        public static float CalPerimeter(in float l, in float w) => 2 * (l + w);
+    }
+}
+
+// In MyFirstApp
+using ProjectTwo;
+float area = AreaAndPerimeter.CalArea(5, 3);
+```
+
+#### ✏️ Internal class in another project?
+
+* `internal` classes are only accessible within the same project.
+* To use in another project, make them `public`.
+
+---
+
+### 📄 Additional Concepts Covered
+
+* `Main` method is the starting point of execution.
+* `Console.ReadLine()` returns string. Use `TryParse()` for safe conversion.
+* Value Types vs Reference Types:
+
+  * Value types store data directly (e.g., int, float).
+  * Reference types store a reference to the data (e.g., string, arrays, class).
+* Multi-project solutions help modularize your code.
+
+---
+
