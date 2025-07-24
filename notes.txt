@@ -148,3 +148,200 @@ float area = AreaAndPerimeter.CalArea(5, 3);
 
 ---
 
+
+---
+
+
+#### 🔹 Memory Allocation: Stack vs Heap
+
+* **Stack:**
+
+  * Stores value types (e.g., `int`, `bool`, etc.)
+  * Stores references (addresses) of objects created on the heap
+  * Has limited memory
+  * Fast access (LIFO structure)
+* **Heap:**
+
+  * Stores actual objects created using `new`
+  * Stores reference type data (e.g., class instances, arrays)
+  * Garbage collected
+
+**Example:**
+
+```csharp
+Employee e1 = new Employee();
+Employee e2 = new Employee();
+```
+
+* `e1` and `e2` are stored on the stack (they hold addresses)
+* Actual `Employee` objects are on the heap
+
+---
+
+### 🔹 Static vs Non-Static Members
+
+* **Static member:**
+
+  * Belongs to the class, not the instance
+  * Shared across all objects
+  * Accessed using the class name: `ClassName.StaticMember`
+
+* **Non-static member:**
+
+  * Unique to each object
+  * Accessed via the object: `objectName.NonStaticMember`
+
+**Example:**
+
+```csharp
+public class Emp {
+    public int id = 10;         // Non-static (each object gets its own id)
+    public static int count = 0; // Static (shared)
+
+    public void Fun1() {
+        Console.WriteLine(id);     // Works
+        Console.WriteLine(count);  // Works (can access static from non-static)
+    }
+
+    public static void Fun2() {
+        // Console.WriteLine(id); // ❌ Error: can't access non-static from static
+        Console.WriteLine(count);  // ✅ Works
+    }
+}
+```
+
+📌 Static methods **cannot** access non-static variables because there's no object context (`this` is not available).
+
+---
+
+### 🔹 Recursion & Stack Overflow
+
+* A **recursive function** calls itself
+* Requires a **base case** to stop recursion
+* Each recursive call goes on the **stack** → too many calls without returning = **stack overflow**
+
+**Example:**
+
+```csharp
+int Factorial(int n) {
+    if (n == 1) return 1; // base case
+    return n * Factorial(n - 1); // recursive case
+}
+```
+
+**Dry run for `Factorial(3)`**:
+
+```
+Factorial(3) = 3 * Factorial(2)
+Factorial(2) = 2 * Factorial(1)
+Factorial(1) = 1
+Result = 3 * 2 * 1 = 6
+```
+
+---
+
+
+-------------- July 24 ------------------
+
+declaration and defination in functions
+
+function overloading
+
+2 rules 
+either number of argumements must be different 
+or arguemnt type must be different
+
+compile time or tatic binding or early binding
+
+runtime or dynamic binding or late binding
+
+polymorphism many shapes
+2 types dyanamic and static
+static poly overloading
+dynamic tbd...
+
+binding.
+
+chat gpt 
+
+
+
+### 🔹 **Function Declaration vs Definition**
+
+* **Declaration:**
+  Just tells the compiler a function exists (in some languages, needed when the definition is later in the code).
+
+* **Definition:**
+  Includes the full function body with logic.
+
+**Example:**
+
+```csharp
+// Declaration (in some languages)
+// int Add(int a, int b);
+
+// Definition
+int Add(int a, int b) {
+    return a + b;
+}
+```
+
+In **C#**, declaration and definition are usually together.
+
+---
+
+### 🔹 **Function Overloading** (Compile-time Polymorphism)
+
+Function overloading means creating **multiple methods with the same name** but **different parameters**.
+
+✅ **Two Rules:**
+
+1. **Number of arguments must differ**
+2. **Or types of arguments must differ**
+
+❌ Return type alone cannot differentiate overloaded methods.
+
+**Example:**
+
+```csharp
+void Print(int x) { }
+void Print(string x) { }     // valid (type differs)
+void Print(int x, int y) { } // valid (number differs)
+```
+
+---
+
+### 🔹 **Binding in C# (Linking Call to Code)**
+
+* **Binding:** The process of connecting a method call to the actual method code.
+
+---
+
+### 🔹 **Types of Binding / Polymorphism**
+
+#### 1. **Static / Compile-time Binding**
+
+* Also called: **Early binding**
+* Done at **compile time**
+* Example: **Function Overloading**
+
+#### 2. **Dynamic / Run-time Binding**
+
+* Also called: **Late binding**
+* Done at **runtime**
+* Example: **Function Overriding** (covered later)
+
+---
+
+### 🔹 **Polymorphism** = Many Forms
+
+Polymorphism allows objects or methods to **behave in different ways** based on context.
+
+#### Two Types:
+
+1. **Static Polymorphism** → **Method Overloading**
+2. **Dynamic Polymorphism** → (To be studied: involves inheritance + overriding)
+
+---
+
+
