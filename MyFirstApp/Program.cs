@@ -1,5 +1,6 @@
 ﻿using MyFirstApp;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks.Dataflow;
 
 internal class Program
 {
@@ -78,16 +79,93 @@ internal class Program
         //}
         //else
         //{ Console.WriteLine("Please enter valid input to generate factorial");
-        //} 
-        Area CalculateArea = new Area();
-        float squareArea = CalculateArea.CalArea(3);
-        Console.WriteLine(squareArea);
+        //}
 
-        float rectangleArea = CalculateArea.CalArea(3,5);
-        Console.WriteLine(rectangleArea);
+        //Program 8 
+        //Area CalculateArea = new Area();
+        //float squareArea = CalculateArea.CalArea(3);
+        //Console.WriteLine(squareArea);
 
-        float circleArea = CalculateArea.CalArea(3, true);
-        Console.WriteLine(circleArea);
+        //float rectangleArea = CalculateArea.CalArea(3,5);
+        //Console.WriteLine(rectangleArea);
+
+        //float circleArea = CalculateArea.CalArea(3, true);
+        //Console.WriteLine(circleArea);
+
+        //Program 9 
+
+        //Student kamran = new Student();
+        //Student chatgpt = new Student("chatgpt", 29);
+
+        //Student third = new Student(chatgpt);
+
+        //chatgpt.DisplayData();
+        //third.DisplayData();
+
+
+        //third.name = "kamran";
+        //third.DisplayData();
+
+
+        //chatgpt.name = "GPT";
+        //chatgpt.DisplayData();
+
+        //Program 10 
+
+        //Book book1 = new Book();
+        //book1.DisplayBook();
+        //Book book2 = new Book("Atomic Habits", "James Clear", 2018);
+        //book2.DisplayBook();
+        //Book book3 = new Book(book2);
+        //book3.DisplayBook();
+
+        //book3.updateField("title", "Deep Work");
+        //book3.DisplayBook();
+
+        //book3.updateField("year", "2020");
+        //book3.DisplayBook();
+
+        //book2.updateField("author", "GPT");
+        //book2.DisplayBook();
+
+        //bool result = book2.IsSameBook(book3);
+        //Console.WriteLine($"Book2 and Book3 are {(result ? "same" : "different")}");
+
+        //Book.ShowTotalbooks();
+
+        Book[] library = new Book[3];
+        for (int i = 0; i < library.Length; i++) {
+            library[i] = new Book();
+            Console.WriteLine("enter title name");
+            library[i].title = Console.ReadLine();
+            Console.WriteLine("enter author name");
+            library[i].author = Console.ReadLine();
+            Console.WriteLine("enter year");
+            string tempYear = Console.ReadLine();
+            bool isYear = int.TryParse(tempYear, out int year);
+            if (isYear)
+            {
+                library[i].year = year;
+            }
+        }
+        int prevsBookyear = 0;
+
+        foreach (Book book in library)
+        {
+            
+            if (prevsBookyear < book.year)
+            {
+                prevsBookyear = book.year;
+            }
+
+            
+
+        }
+
+        Book.ShowLatestBook(prevsBookyear, library);
+
+
+
     }
     //part of program 7
     //    public static int Factorial(int num) {

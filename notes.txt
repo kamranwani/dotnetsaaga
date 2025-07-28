@@ -345,3 +345,45 @@ Polymorphism allows objects or methods to **behave in different ways** based on 
 ---
 
 
+---------------------------------------------- JULY 25 2025 --------------------------------------------
+
+constructor is a special func that makes our object
+and is called by compiler if we don't make it ourselves
+also called default constructor (made by compiler)
+zero arguement constructor
+default vlue of refrence type and value type 
+default constructor because default value being put into it
+
+
+copy constructor
+thi keyword
+
+if we write constructor there is still always copy constructor.
+shallow copy
+deep copy
+
+== vs equals basic difference shalow v deep comparison 
+
+static constructor used to give default values to static fields
+
+
+static default parameterised copy 
+obj and static broad view
+
+high density heap 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
