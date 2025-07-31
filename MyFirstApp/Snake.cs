@@ -38,7 +38,7 @@ namespace MyFirstApp
         {
             name= snake2.name;
             voice= snake2.voice;
-            legs = snake2.legs??0;
+            legs = snake2.legs;
             type = snake2.type;
             snakeType++;
         }
