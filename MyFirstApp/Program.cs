@@ -1,6 +1,6 @@
-﻿using MyFirstApp;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks.Dataflow;
+﻿    using MyFirstApp;
+    using System.Security.Cryptography.X509Certificates;
+    using System.Threading.Tasks.Dataflow;
 
 internal class Program
 {
@@ -133,47 +133,124 @@ internal class Program
 
         //Book.ShowTotalbooks();
 
-        Book[] library = new Book[3];
-        for (int i = 0; i < library.Length; i++) {
-            library[i] = new Book();
-            Console.WriteLine("enter title name");
-            library[i].title = Console.ReadLine();
-            Console.WriteLine("enter author name");
-            library[i].author = Console.ReadLine();
-            Console.WriteLine("enter year");
-            string tempYear = Console.ReadLine();
-            bool isYear = int.TryParse(tempYear, out int year);
-            if (isYear)
-            {
-                library[i].year = year;
-            }
-        }
-        int prevsBookyear = 0;
+        //Book[] library = new Book[3];
+        //for (int i = 0; i < library.Length; i++) {
+        //    library[i] = new Book();
+        //    Console.WriteLine("enter title name");
+        //    library[i].title = Console.ReadLine();
+        //    Console.WriteLine("enter author name");
+        //    library[i].author = Console.ReadLine();
+        //    Console.WriteLine("enter year");
+        //    string tempYear = Console.ReadLine();
+        //    bool isYear = int.TryParse(tempYear, out int year);
+        //    if (isYear)
+        //    {
+        //        library[i].year = year;
+        //    }
+        //}
+        //int prevsBookyear = 0;
 
-        foreach (Book book in library)
+        //foreach (Book book in library)
+        //{
+
+        //    if (prevsBookyear < book.year)
+        //    {
+        //        prevsBookyear = book.year;
+        //    }
+
+
+
+        //}
+
+        //Book.ShowLatestBook(prevsBookyear, library);
+
+        //Program 11 
+
+        //int smallNum = 100;
+        //long bigNum;
+        //double preciseValue = 1234.56;
+        //int approxValue;
+
+        //bigNum = smallNum;
+        //approxValue = (int)preciseValue;
+        //{
+        //    Console.WriteLine($"{smallNum},{bigNum},{preciseValue},{approxValue}");
+
+
+
+
+
+        //}
+
+        //Program 12 
+
+        Snake snake = new Snake("cobra", "hiss", null, "reptile");
+        Console.WriteLine("before shallow copy");
+        Console.WriteLine("----------");
+        snake.ShowSnakeData();
+        Console.WriteLine("----------");
+
+        Snake snake2 = snake;
+        snake2.name = "cobra updated";
+        Snake snake3 = new Snake(snake);
+
+        snake3.name = "python";
+
+        Console.WriteLine("after shallow copy");
+
+        snake.ShowSnakeData();
+        Console.WriteLine("----------");
+
+        snake2.ShowSnakeData();
+        Console.WriteLine("----------");
+        Console.WriteLine("after deep copy");
+        Console.WriteLine("----------");
+        snake3.ShowSnakeData();
+        Console.WriteLine(Snake.snakeType);
+
+        Sheep sheep = new Sheep();
+        Cat cat = new Cat();
+        Dog dog = new Dog();
+
+        object []animalsArr = new object[5];
+
+
+        animalsArr[0] = cat;
+        animalsArr[1] = dog;
+        animalsArr[2] = sheep;
+        animalsArr[3] = snake;
+        animalsArr[4] = snake3;
+
+        foreach (object animal in animalsArr)
         {
-            
-            if (prevsBookyear < book.year)
+            if (animal is Cat)
             {
-                prevsBookyear = book.year;
+                Cat myCat = animal as Cat;
+                Console.WriteLine(myCat != null ? "is a cat" : "got null instead of cat");
+            }
+            else if (animal is Dog)
+            {
+                Dog myDog = animal as Dog;
+                Console.WriteLine(myDog != null ? "is a dog" : "got null instead of dog");
+            }
+            else if (animal is Sheep)
+            {
+                Sheep mySheep = animal as Sheep;
+                Console.WriteLine(mySheep != null ? "is a sheep" : "got null instead of sheep");
+            }
+            else if (animal is Snake) {
+                Snake tempSnake = animal as Snake;
+                Console.WriteLine(tempSnake != null ? "is a snake" : "got null instead of snake");
             }
 
-            
-
+            //part of program 7
+            //    public static int Factorial(int num) {
+            //    if (num == 0 || num == 1)
+            //        return 1;
+            //    return num * Factorial(num - 1);
+            //}
         }
-
-        Book.ShowLatestBook(prevsBookyear, library);
-
-
-
     }
-    //part of program 7
-    //    public static int Factorial(int num) {
-    //    if (num == 0 || num == 1)
-    //        return 1;
-    //    return num * Factorial(num - 1);
-    //}
+
 }
-
-
 

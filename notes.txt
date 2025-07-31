@@ -372,8 +372,97 @@ obj and static broad view
 
 high density heap 
 
+---
+
+### 🔹 **Constructors in C#**
+
+* **Default Constructor**: Provided automatically if no constructor is defined. Initializes default values.
+* **Parameterized Constructor**: Allows passing values during object creation.
+* **Copy Constructor**: Creates a new object using values from an existing object.
+* **Static Constructor**: Used to initialize static fields. Runs once per type before any static member is accessed.
+
+---
+
+### 🔹 **this Keyword**
+
+* Refers to the current object.
+* Useful to resolve naming conflicts (e.g., `this.name = name`).
+
+---
+
+### 🔹 **Shallow Copy vs Deep Copy**
+
+* **Shallow Copy**: Copies references. Changes in one object may affect the other.
+* **Deep Copy**: Creates independent copies of reference fields.
+
+---
+
+### 🔹 **== vs .Equals()**
+
+* `==`: Compares reference (for objects) or value (for primitives).
+* `.Equals()`: Can be overridden to compare values even for objects.
+
+---
+
+### 🔹 **Static vs Instance Members**
+
+* **Instance Members**: Belong to an object. Accessed through object.
+* **Static Members**: Belong to the class. Shared across all objects. Accessed via class name.
+
+---
+
+### 🔹 **Object and Memory**
+
+* Objects are stored in **Heap memory**.
+* Static fields live for the duration of the application (App Domain lifetime).
+* Each object gets its own instance fields but shares static fields with others.
+
+---
+
+### 🔹 **High-Density Heap**
+
+* Optimized memory area used by the .NET runtime for allocating large or many small objects.
+* Improves performance by reducing memory fragmentation.
+* Mainly relevant in advanced performance tuning or large-scale applications.
+
+---
+
+---------------------------------------------type conversion
+
+2 types of conversion
+.MaxValue
+value type / convertable type
+implicit conversion (auto done by compiler) and explicit conversion (cast operator)
+
+long a=121212121212121212
+int b= (int)a
+
+non convertable type/
+refrence type
 
 
+only possible in parent child .
+as operator better way
+
+Object aka object class
+father of all objects. inbuilt
+
+as operator in refrence mostly
+
+is operator is not
+
+as typecast and is check datatype returns true false
+
+
+3 types of null cehck == != , is , ?.
+
+upcasting downcasting
+
+
+
+constructor default parametirsez copy shallow deep 
+array object object employee field salary ? showsalary get total salary
+developer showdata show profile hr
 
 
 
