@@ -184,64 +184,71 @@ internal class Program
 
         //Program 12 
 
-        Snake snake = new Snake("cobra", "hiss", null, "reptile");
-        Console.WriteLine("before shallow copy");
-        Console.WriteLine("----------");
-        snake.ShowSnakeData();
-        Console.WriteLine("----------");
+        //Snake snake = new Snake("cobra", "hiss", null, "reptile");
+        //Console.WriteLine("before shallow copy");
+        //Console.WriteLine("----------");
+        //snake.ShowSnakeData();
+        //Console.WriteLine("----------");
 
-        Snake snake2 = snake;
-        snake2.name = "cobra updated";
-        Snake snake3 = new Snake(snake);
+        //Snake snake2 = snake;
+        //snake2.name = "cobra updated";
+        //Snake snake3 = new Snake(snake);
 
-        snake3.name = "python";
+        //snake3.name = "python";
 
-        Console.WriteLine("after shallow copy");
+        //Console.WriteLine("after shallow copy");
 
-        snake.ShowSnakeData();
-        Console.WriteLine("----------");
+        //snake.ShowSnakeData();
+        //Console.WriteLine("----------");
 
-        snake2.ShowSnakeData();
-        Console.WriteLine("----------");
-        Console.WriteLine("after deep copy");
-        Console.WriteLine("----------");
-        snake3.ShowSnakeData();
-        Console.WriteLine(Snake.snakeType);
+        //snake2.ShowSnakeData();
+        //Console.WriteLine("----------");
+        //Console.WriteLine("after deep copy");
+        //Console.WriteLine("----------");
+        //snake3.ShowSnakeData();
+        //Console.WriteLine(Snake.snakeType);
 
-        Sheep sheep = new Sheep();
-        Cat cat = new Cat();
-        Dog dog = new Dog();
+        //Sheep sheep = new Sheep();
+        //Cat cat = new Cat();
+        //Dog dog = new Dog();
 
-        object []animalsArr = new object[5];
+        //object []animalsArr = new object[5];
 
 
-        animalsArr[0] = cat;
-        animalsArr[1] = dog;
-        animalsArr[2] = sheep;
-        animalsArr[3] = snake;
-        animalsArr[4] = snake3;
+        //animalsArr[0] = cat;
+        //animalsArr[1] = dog;
+        //animalsArr[2] = sheep;
+        //animalsArr[3] = snake;
+        //animalsArr[4] = snake3;
 
-        foreach (object animal in animalsArr)
-        {
-            if (animal is Cat)
-            {
-                Cat myCat = animal as Cat;
-                Console.WriteLine(myCat != null ? "is a cat" : "got null instead of cat");
-            }
-            else if (animal is Dog)
-            {
-                Dog myDog = animal as Dog;
-                Console.WriteLine(myDog != null ? "is a dog" : "got null instead of dog");
-            }
-            else if (animal is Sheep)
-            {
-                Sheep mySheep = animal as Sheep;
-                Console.WriteLine(mySheep != null ? "is a sheep" : "got null instead of sheep");
-            }
-            else if (animal is Snake) {
-                Snake tempSnake = animal as Snake;
-                Console.WriteLine(tempSnake != null ? "is a snake" : "got null instead of snake");
-            }
+        //foreach (object animal in animalsArr)
+        //{
+        //    if (animal is Cat)
+        //    {
+        //        Cat myCat = animal as Cat;
+        //        Console.WriteLine(myCat != null ? "is a cat" : "got null instead of cat");
+        //    }
+        //    else if (animal is Dog)
+        //    {
+        //        Dog myDog = animal as Dog;
+        //        Console.WriteLine(myDog != null ? "is a dog" : "got null instead of dog");
+        //    }
+        //    else if (animal is Sheep)
+        //    {
+        //        Sheep mySheep = animal as Sheep;
+        //        Console.WriteLine(mySheep != null ? "is a sheep" : "got null instead of sheep");
+        //    }
+        //    else if (animal is Snake) {
+        //        Snake tempSnake = animal as Snake;
+        //        Console.WriteLine(tempSnake != null ? "is a snake" : "got null instead of snake");
+        //    }
+
+        //Program 13 
+        string str1 = "abc";
+        string str2 = null;
+
+        Console.WriteLine(str2);
+
 
             //part of program 7
             //    public static int Factorial(int num) {
@@ -252,5 +259,5 @@ internal class Program
         }
     }
 
-}
+
 
