@@ -680,6 +680,72 @@ converting string to different value type
 3 ways
 type.Parse
 type.TryParse
+Convert.
+To...,Single,Double,Decimal,DateTime,Int16,Byte,Int32,Int64
+
+boxing and unboxing
+
+boxing is saving value type directly on heap.
+
+-------------------------------------------------------------------------------------------------------
+encapsulation 
+
+setter n getter
+setter can set one field
+has no return type
+setter only takes one input
+
+get has no param has return type
+
+best practice is to set and get with just one field
+and this is the rule for setter and getter
+
+interface functions which internally access private fields. public functions, this is encapsulation.
+
+
+there is a newer way in .net known as props
+
+tbd tom....
+
+task make class, make fileds few, set and getter of every field.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
