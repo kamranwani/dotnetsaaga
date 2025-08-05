@@ -709,9 +709,140 @@ tbd tom....
 
 task make class, make fileds few, set and getter of every field.
 
+Here are your **complete, clean notes** for today's C# lecture:
 
+---
 
+## 📘 C# Lecture Notes – August 4, 2025
 
+### 🧠 Topic: String Conversion, Boxing/Unboxing, Encapsulation Practice (with Car class)
+
+---
+
+### 🔁 **1. String Conversion Methods**
+
+#### ✅ `Parse()`
+
+* Converts **string → value type**
+* Throws exception if input is invalid or null
+
+```csharp
+int age = int.Parse("25"); // Works
+int age = int.Parse("abc"); // ❌ throws FormatException
+```
+
+#### ✅ `TryParse()`
+
+* Converts string → value type **safely**
+* Returns `true/false` instead of throwing exception
+
+```csharp
+bool success = int.TryParse("25", out int age); // ✅ success = true, age = 25
+bool fail = int.TryParse("abc", out int result); // ✅ success = false, result = 0
+```
+
+#### ✅ `Convert.ToX()`
+
+* Can convert null/invalid safely
+* Returns default value (e.g., 0 for int) on null
+
+```csharp
+int x = Convert.ToInt32("123"); // 123
+int y = Convert.ToInt32(null);  // 0
+int z = Convert.ToInt32("abc"); // ❌ throws FormatException
+```
+
+---
+
+### 📦 **2. Boxing and Unboxing**
+
+| Term         | Meaning                                                      |
+| ------------ | ------------------------------------------------------------ |
+| **Boxing**   | Wrapping a **value type** into an **object**, stored on heap |
+| **Unboxing** | Extracting the value type back from the object               |
+
+```csharp
+int n = 10;
+object obj = n;      // ✔️ Boxing
+
+int x = (int)obj;    // ✔️ Unboxing
+```
+
+---
+
+### 🔒 **3. Encapsulation**
+
+* Binding fields and restricting access through **getters** and **setters**
+* Use `private` fields and `public` methods
+
+#### ✅ Setter:
+
+* No return type
+* Takes **only one input**
+
+```csharp
+public void SetBrandName(string brandName) { ... }
+```
+
+#### ✅ Getter:
+
+* Has return type
+* Takes **no input**
+
+```csharp
+public string GetBrandName() { return _BrandName; }
+```
+
+#### 🛡️ Why Encapsulation?
+
+* Controls what gets read or modified
+* Prevents direct external access to class data
+
+---
+
+### 🚗 **4. Practice Class: `Cars`**
+
+#### Fields:
+
+```csharp
+private string _BrandName;
+private string _CarModel;
+private string _CarName;
+private int _Year;
+private decimal _Price;
+public static int _NumberOfUnits;
+```
+
+#### Constructors:
+
+* Default constructor
+* Parameterized constructor
+* Copy constructor
+* Static constructor
+
+#### Methods:
+
+* Setters & Getters for each field
+* `ShowCarData()` to print car info
+* `Main()` demonstrates:
+
+  * Setting data
+  * Using all 3 constructors
+  * Copy vs clone
+  * `_NumberOfUnits` tracking
+
+---
+
+### 🧪 Example Decimal Use
+
+```csharp
+car.SetPrice(104000.11m); // ✅ m indicates decimal
+```
+-----------------------------------------------------------------------------------------------------------
+
+property aka prop get set
+
+auto implemented property
 
 
 
