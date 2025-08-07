@@ -1,44 +1,56 @@
 ﻿    using MyFirstApp;
-    using System.Security.Cryptography.X509Certificates;
+using System.Net.NetworkInformation;
+using System.Security.Cryptography.X509Certificates;
     using System.Threading.Tasks.Dataflow;
+using Current=MyFirstApp.Current;
+using Saving=MyFirstApp.Savings;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        //Cars car=new Cars();
-        // car.SetBrandName("Hyundai");
-        // car.SetCarName("i20 sports");
-        // car.SetPrice(104000.11m);
-        // car.SetCarModel("i2001ddwKml");
-        // car.SetYear(2025);
+        Current.Account curaccount = new Current.Account();
+        //curaccount.DisplayAccountDetails();
+        Saving.Account savaccount=new Saving.Account();
+        //savaccount.DisplayAccountDetails();
 
-        // Console.WriteLine(car.GetBrandName());
+       
+        Current.Account curaccount2 = new Current.Account(100050076696,"Kamran","ParayPora",7006704866,"Kamraanwani@gmail.com","Ab. Rashid",20000);
+        //curaccount2.DisplayAccountDetails();
 
-        //car.ShowCarData();
+        Saving.Account savaccount2 = new Saving.Account(220050097732, "Basit", "Baghat", 9797918917, "Basitmehraj@gmail.com", "Mehraj ud din", 1100);
+        //savaccount2.DisplayAccountDetails();
 
-        //Cars bmw=new Cars("bmw","BKLPAJDHAAN","M30D",2024,4521000.22m);
-        //bmw.ShowCarData();
+        Current.Account curaccount3 = curaccount2;
+        curaccount3.Address = "Habib Colony, Parray Pora";
 
-        //Cars bmwCopy = bmw;
-        //bmwCopy.ShowCarData();
+        //savaccount2.DisplayAccountDetails();
 
-        //Cars mercedes = new Cars(bmw);
-        //mercedes.SetBrandName("mercedes");
-        //mercedes.ShowCarData();
-
-        MobilePhones mobilePhones = new MobilePhones();
-
-        MobilePhones mobilePhones1 = new MobilePhones("Samsung", "S25", 87000.50m, 2025);
+        Saving.Account savaccount3 = new Saving.Account();
 
 
-        mobilePhones.Model = "S25 Ultra";
-        mobilePhones.Price = 147000.30m;
-        mobilePhones.Brand = "Samsung";
-        mobilePhones.ManufactureYear = 2025;
+        savaccount3.AccountNumber = 332197540001;
+        savaccount3.Name = "Faiq";
+        savaccount3.ContactNumber = 9596455182;
+        savaccount3.Email = "faiqaziz@gmail.com";
+        savaccount3.Parentage = "Aziz Bhat";
+        savaccount3.AddBalance(2100);
 
-        Console.WriteLine($"Mobile Specifications {mobilePhones1.Brand}, {mobilePhones1.Model}, {mobilePhones1.ManufactureYear},{mobilePhones1.Price}");
-        mobilePhones.ShowMobiles();
+        curaccount3.DisplayAccountDetails();
+
+        curaccount3.Withdrawal(250.50m);
+        //Console.WriteLine(savaccount3.Balance);
+
+        //Console.WriteLine("Accounts");
+
+        //savaccount3.DisplayAccountDetails();
+        //savaccount2.DisplayAccountDetails();
+        //curaccount2.DisplayAccountDetails();
+        //curaccount3.DisplayAccountDetails();
+
+
+
+
 
     }
 }

@@ -845,17 +845,38 @@ property aka prop get set
 auto implemented property
 
 
+----------------------------------------------------------------------------------------------------------
+about namespace
+fully qualified name
+aliasing
+system root or base namespace
+
+Bank Account
+prop act no name address contact num email parentage bal
+
+some manual mostly add validation some autoimport
+
+deposit (Add amt) withdrwal(sub amt) balance
+1000 bal min
 
 
+curent saving both account
 
+------------------------------------------------------------------------------------------------------------------------------
+Presentation Layer /UI layer
 
+seperation 
+exe(i/o) dll(no i/o)
 
+application layer/ business layer 
+write logic n working here
 
+model layer entity layer domain layer 3-layer
 
+data layer/physical layer
+where data is saved typical eg, database N-layer
 
-
-
-
+layer = tier onion architecture , clean arcitecture latest, cqis
 
 
 

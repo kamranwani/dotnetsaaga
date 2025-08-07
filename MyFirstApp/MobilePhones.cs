@@ -10,15 +10,20 @@ namespace MyFirstApp
 {
     internal class MobilePhones
     {
-        public string _brand;
-        public decimal _price;
-        public int _manufactureYear;
-        public static int _totalPhonesMade;
+      private string _brand;
+        private decimal _price;
+        private int _manufactureYear;
+        private static int _totalPhonesMade;
 
         public string Brand
         {
-            get { return _brand; }
-        set { if (!string.IsNullOrWhiteSpace(value))
+            get 
+            { 
+                return _brand; 
+            }
+               set 
+            { 
+                if (!string.IsNullOrWhiteSpace(value))
                     _brand = value;
             else
                     Console.WriteLine("Invalid Brand Name");
