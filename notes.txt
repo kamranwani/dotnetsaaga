@@ -879,21 +879,247 @@ where data is saved typical eg, database N-layer
 layer = tier onion architecture , clean arcitecture latest, cqis
 
 
+-----------------------------------------------------------------------------------------------------------------------------
+
+inheritance
+generaliztion and specilization
+
+public protected private :
+
+:base() default 
+:base(params) manual
+
+calling base.parentmethod
+
+task 
+
+______________________________________________________
+
+method hiding
+method overriding
+
+dynsmic polymorphism/runtime polymorphism
+early binding or late binding
+static or dynamic
+compile time or runtime
+
+virtualkeyword
+new keyword in method hiding or early binding is optional
+
+in early method will be called who has refrence or left side and in late method will be clled whose object is created which happens on runtime or right side
+it use virtual and overrides and we can't change signature
+
+single inheritance 
+
+sealed if we dont ant cla to be inherited
+
+more then one parent is not possible or other ways multiple inheritance is not possible
 
 
+diamond problem 
 
 
+----------------------------------------------------------
 
+## **C# Notes – Consolidated**
 
+### **1. Property (`prop`) and `get` / `set`**
 
+* Properties allow controlled access to class fields — replacing manual `GetX()` / `SetX()` methods.
+* Syntax:
 
+  ```csharp
+  private string _name;
+  public string Name
+  {
+      get { return _name; }
+      set { _name = value; }
+  }
+  ```
 
+---
 
+### **2. Auto-Implemented Property**
 
+* No need to manually define a backing field; compiler creates it automatically.
+* Syntax:
 
+  ```csharp
+  public string Name { get; set; }
+  ```
+* Can still add `private set` or validation with full property syntax.
 
+---
 
+### **3. Namespaces**
 
+* Logical grouping of related classes, interfaces, and enums.
+* Prevents naming conflicts.
+* **Fully Qualified Name:** Access class with namespace included.
+
+  ```csharp
+  System.Console.WriteLine("Hello");
+  ```
+* **Aliasing:** Create short name for a namespace.
+
+  ```csharp
+  using IO = System.IO;
+  ```
+* **System Root/Base Namespace:**
+  `System` is the root namespace in .NET; all core classes are under it.
+
+---
+
+### **4. Bank Account Example**
+
+**Properties:**
+
+* AccountNumber
+* Name
+* Address
+* ContactNumber
+* Email
+* Parentage
+* Balance
+
+**Validation Example:**
+
+```csharp
+public decimal Balance
+{
+    get { return _balance; }
+    set
+    {
+        if (value >= 1000) _balance = value;
+        else Console.WriteLine("Minimum balance is 1000.");
+    }
+}
+```
+
+**Methods:**
+
+* `Deposit(amount)` → add to balance.
+* `Withdraw(amount)` → subtract if ≥ 1000 left.
+* `GetBalance()` → show balance.
+
+**Types:**
+
+* `CurrentAccount`
+* `SavingsAccount`
+
+---
+
+### **5. Layers in Application Design**
+
+* **Presentation Layer (UI Layer):**
+
+  * Handles Input/Output.
+  * Usually EXE project.
+  * No business logic.
+* **Application Layer (Business Layer):**
+
+  * Contains rules, calculations, and working logic.
+  * Usually DLL project.
+* **Model / Entity / Domain Layer:**
+
+  * Represents data structure (classes, entities).
+* **Data Layer (Physical Layer):**
+
+  * Handles storage — typically a database.
+* **Architecture Terms:**
+
+  * **Layer** = Logical separation of concerns.
+  * **Tier** = Physical separation (e.g., server for DB, server for app).
+  * **Onion Architecture / Clean Architecture** = Latest patterns.
+  * **CQRS** (Command Query Responsibility Segregation) = Separates read and write operations.
+
+---
+
+### **6. Inheritance**
+
+* **Generalization:** Making a base class for common functionality.
+* **Specialization:** Derived classes for specific functionality.
+* Access:
+
+  * **public:** Accessible everywhere.
+  * **protected:** Accessible in base and derived classes.
+  * **private:** Accessible only inside the class itself.
+
+**Constructor Calls:**
+
+* `:base()` → Calls base class default constructor.
+* `:base(params)` → Calls base class parameterized constructor.
+* `base.MethodName()` → Calls base class method.
+
+---
+
+### **7. Method Hiding vs Method Overriding**
+
+**Method Hiding:**
+
+* Uses `new` keyword (optional — without it, compiler warns).
+* Early binding → method of **reference type (left side)** is called.
+
+**Method Overriding:**
+
+* Requires `virtual` in base and `override` in child.
+* Late binding → method of **object type (right side)** is called.
+* Signature must be identical.
+
+---
+
+### **8. Polymorphism**
+
+* **Static / Compile-time polymorphism:** Resolved at compile time (e.g., method overloading, method hiding).
+* **Dynamic / Runtime polymorphism:** Resolved at runtime (e.g., method overriding with `virtual` / `override`).
+
+---
+
+### **9. `virtual` Keyword**
+
+* Marks a method as overridable in derived classes.
+
+### **10. `new` Keyword (in methods)**
+
+* Hides parent method.
+* Optional; without it, compiler warns.
+
+---
+
+### **11. Early vs Late Binding**
+
+* **Early Binding:**
+
+  * Happens at compile time.
+  * Method of **reference type** is used.
+* **Late Binding:**
+
+  * Happens at runtime.
+  * Method of **object type** is used.
+  * Needs `virtual` in base + `override` in child.
+
+---
+
+### **12. Inheritance Types**
+
+* **Single Inheritance:** One base → one derived.
+* **Multiple inheritance:** Not supported for classes (supported via interfaces).
+
+---
+
+### **13. Sealed**
+
+* **Sealed class:** Cannot be inherited.
+* **Sealed method:** Cannot be overridden further.
+
+---
+
+### **14. Diamond Problem**
+
+* Occurs in multiple inheritance when two base classes have the same method and a derived class inherits from both → ambiguity.
+* C# avoids this by disallowing multiple inheritance for classes.
+
+---
 
 
 
