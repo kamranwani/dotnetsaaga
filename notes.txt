@@ -1112,7 +1112,7 @@ public decimal Balance
 * **Sealed class:** Cannot be inherited.
 * **Sealed method:** Cannot be overridden further.
 
----
+---\3  
 
 ### **14. Diamond Problem**
 
@@ -1120,6 +1120,23 @@ public decimal Balance
 * C# avoids this by disallowing multiple inheritance for classes.
 
 ---
+
+structure 
+struct
+
+const vs
+read-only
+
+const is provided value only once at first. read-only we can keep value in constructor or setter
+
+enum vs struct vs class
+
+enum
+strongly typed 
+named integer 
+
+equals vs ==
+toString with refrence type overloading toString and equals
 
 
 
